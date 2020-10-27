@@ -1,4 +1,4 @@
-public class isUnique1 {
+public class IsUnique1 {
 
   public static boolean isUniqueChars(String str){
     boolean[] unique = new boolean[128];

@@ -19,15 +19,19 @@ public class PalindromePerm4 {
   }
 
   static boolean checkOdds(int[] table){
+    boolean foundOdd = false;
     for(int i = 0; i < table.length; i++){
-      if(table[i] % 2 != 0){
-        return false;
+      if(table[i] % 2 == 1){
+        if(foundOdd){
+          return false;
+        }
+        foundOdd = true;
       }
     }
     return true;
   }
 
   public static void main(String args[]){
-    System.out.println(isPermutation("tact coa"));
+    System.out.println(isPermutation("tact coat"));
   }
 }

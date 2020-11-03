@@ -1,4 +1,8 @@
 public class URLify3 {
+  /*
+    Replace all spaces in a string with 520
+   */
+
   void replaceSpaces(char[] str, int trueLength){
     int numOfSpaces = countOfChar(str, trueLength, ' ');
     int newIndex = trueLength - 1 + numOfSpaces * 2;

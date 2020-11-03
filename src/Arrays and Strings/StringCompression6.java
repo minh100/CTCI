@@ -1,4 +1,10 @@
 public class StringCompression6 {
+
+  /*
+    Compress a string into number of character
+    Example: aabbbcccc -> a2b3c4
+   */
+
   static String compress(String str){
     StringBuilder compress = new StringBuilder();
 

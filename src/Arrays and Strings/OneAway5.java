@@ -1,4 +1,10 @@
 public class OneAway5 {
+
+  /*
+    Check if a one string is one edit away from the other string
+    Edits include deleting, inserting, or changing just one character
+   */
+
   static boolean isOneEdit(String first, String second){
     if(first.length() == second.length()){
       return replaceEdit(first, second);

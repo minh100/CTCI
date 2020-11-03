@@ -1,5 +1,7 @@
 public class CheckPermutation2 {
-
+/*
+  Check if one string is a permutation of another
+ */
   public static boolean isPermutation(String s1, String s2){
     if(s1.length() != s2.length()) return false;
 

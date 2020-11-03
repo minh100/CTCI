@@ -1,4 +1,8 @@
 public class ZeroMatrix8 {
+
+  /*
+    Given MxN matrix, if any element is 0 set that element's row and col to 0
+   */
   static void setZeros(int[][] matrix){
     boolean[] row = new boolean[matrix.length];
     boolean[] col = new boolean[matrix[0].length];

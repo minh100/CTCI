@@ -1,4 +1,9 @@
 public class PalindromePerm4 {
+
+  /*
+    Given a string, check if it is a permutation of a palindrome
+   */
+
    static boolean isPermutation(String phrase){
     phrase = phrase.toLowerCase();
     int[] table = buildCharFreq(phrase);

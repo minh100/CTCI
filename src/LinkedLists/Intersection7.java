@@ -8,42 +8,26 @@ public class Intersection7 {
    */
 
   static Node findIntersection(Node list1, Node list2) {
-    // get the size of each list
-    int size1 = getCount(list1);
-    int size2 = getCount(list2);
+    int lenA = getCount(list1);
+    int lenB = getCount(list2);
 
-    // call the getIntersectionNode depending on which list is larger
-    if(size1 > size2) {
-      int diff = size1 - size2;
-      return getIntersectionNode(diff, list1, list2);
-    } else {
-      int diff = size2 - size1;
-      return getIntersectionNode(diff, list2, list1);
+    while(lenA > lenB) {
+      list1 = list1.next;
+      lenA--;
     }
 
-  }
-
-  // The acutal method to find the Node
-  static Node getIntersectionNode(int diff, Node longer, Node shorter){
-    Node longlist = longer;
-    Node shortlist = shorter;
-
-    // advance the longer list until it reaches same length as the shorter list
-    for(int i = 0; i < diff; i++) {
-      if(longlist == null) return null;
-      longlist = longlist.next;
+    while(lenB > lenA) {
+      list2 = list2.next;
+      lenB--;
     }
 
-    // loop until the short and long list has the same data
-    while(longlist != null || shortlist != null){
-      if(longlist.data == shortlist.data) {
-        return longlist;
-      }
-      longlist = longlist.next;
-      shortlist = shortlist.next;
+    while (list1 != list2) {
+      list1 = list1.next;
+      list2 = list2.next;
     }
 
-    return null;
+    return list1;
+
   }
 
   // returns the size of the lists
@@ -58,21 +42,20 @@ public class Intersection7 {
   }
 
   public static void main(String[] args) {
-    Node n = new Node(3);
+    Node n = new Node(4);
     n.next = new Node(1);
-    n.next.next = new Node(5);
-    n.next.next.next = new Node(9);
-    n.next.next.next.next = new Node(7);
-    n.next.next.next.next.next = new Node(2);
-    n.next.next.next.next.next.next = new Node(1);
+    n.next.next = new Node(8);
+    n.next.next.next = new Node(4);
+    n.next.next.next.next = new Node(5);
 
-    Node nt = new Node(4);
+    Node nt = new Node(5);
     nt.next = new Node(6);
-    nt.next.next = new Node(7);
-    nt.next.next.next = new Node(2);
-    nt.next.next.next.next = new Node(1);
+    nt.next.next = new Node(1);
+    nt.next.next.next = new Node(8);
+    nt.next.next.next.next = new Node(4);
+    nt.next.next.next.next.next = new Node(5);
 
-    System.out.println(findIntersection(n, nt).data);
+    System.out.println(findIntersection(n, nt));
   }
 
 }

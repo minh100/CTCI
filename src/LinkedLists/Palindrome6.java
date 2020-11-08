@@ -2,18 +2,45 @@ public class Palindrome6 {
 
   /*
     Check to see if a list is a palindrome
-    Simply reverse the list and check to see if they are the same
+    First, using two runner method get to the right half of the list
+    reverse the right half
+    compare
    */
 
   static boolean isPalindrome(Node head) {
-    Node h = head;
-    Node rev = reverse(head);
-    return isEqual(h, rev);
+    Node fast = head;
+    Node slow = head;
+
+    // gets slow to the half position
+    while(fast != null && fast.next != null) {
+      fast = fast.next.next;
+      slow = slow.next;
+    }
+
+    // odd nodes
+    if(fast != null) {
+      slow = slow.next;
+    }
+
+    // reverse the right half
+    Node end = reverse(slow);
+    Node start = head;
+
+    // compare
+    while(end != null) {
+      if(start.data != end.data) return false;
+
+      end = end.next;
+      start = start.next;
+
+    }
+
+    return true;
   }
 
-  static Node reverse(Node head) {
+  static Node reverse(Node n) {
     Node prev = null;
-    Node curr = head;
+    Node curr = n;
     Node next = null;
 
     while(curr != null) {
@@ -23,21 +50,11 @@ public class Palindrome6 {
       curr = next;
     }
 
-    head = prev;
-    Node clone = head;
+    Node clone = prev;
+
     return clone;
   }
 
-  static boolean isEqual(Node n1, Node n2) {
-    while(n1 != null) {
-      if(n1.data != n2.data) {
-        return false;
-      }
-      n1 = n1.next;
-      n2 = n2.next;
-    }
-    return true;
-  }
 
   public static void main(String[] args) {
     Node n = new Node(1);

@@ -16,7 +16,6 @@ public class BinaryTreeTraversal {
     List<Integer> list = new ArrayList<>();
     if(head != null) {
       Stack<TreeNode> stack = new Stack<>();
-      stack.push(head);
 
       while(head != null || !stack.isEmpty()) {
         while(head!= null) {

@@ -14,12 +14,14 @@ public class LongSubstringWithoutRepeatChar {
 
   // utilizes a sliding window solution
   // using two pointers and an array to keep track of repeats
+
+
   public int lengthOfLongestSubstring(String s) {
     int res = 0;
     int[] count = new int[256];
 
     for(int i = 0, j = 0; i < s.length(); i++) {
-      j = count[s.charAt(i)] > 0 ? Math.max(j, count[s.charAt(i)]) : j;
+      j = count[s.charAt(i)] > 0 ? Math.max(j, count[s.charAt(i)]) : j; // counts the number
       count[s.charAt(i)] = i + 1;
       res = Math.max(res, i - j + 1);
     }

@@ -1,5 +1,7 @@
 package Yangshun;
 
+import java.util.Arrays;
+
 public class ProductOfArrayExceptSelf {
 
   /*
@@ -59,9 +61,7 @@ public class ProductOfArrayExceptSelf {
 
   public static void main(String[] args) {
     int[] a = {1,2,3,4};
-    for(int i: productExceptSelf(a)){
-      System.out.println(i);
-    }
+    System.out.println(Arrays.toString(productExceptSelf(a)));
   }
 
 }

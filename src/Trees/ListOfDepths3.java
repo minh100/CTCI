@@ -5,7 +5,7 @@ public class ListOfDepths3 {
   // Given a binary tree, design an algo which creates a linked list of all the nodes at each depth
   // Example: given a tree with D depth, return D linked lists
 
-  // Breath First Solution
+  // Breadth First Solution
   public ArrayList<LinkedList<TreeNode>> createLevelLinkedList(TreeNode root) {
     ArrayList<LinkedList<TreeNode>> res = new ArrayList<>();
 

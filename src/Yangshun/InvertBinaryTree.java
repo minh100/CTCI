@@ -6,9 +6,8 @@ import java.util.Queue;
 
 public class InvertBinaryTree {
 
-  /*
+  /*  https://leetcode.com/problems/invert-binary-tree/
   Invert a binary tree.
-
     Example:
 
     Input:
@@ -52,7 +51,7 @@ public class InvertBinaryTree {
 
     Queue<TreeNode> queue = new LinkedList<>();
     queue.offer(root);
-    while(root != null || !queue.isEmpty()) {
+    while(queue.isEmpty()) {
       TreeNode curr = queue.poll();
       TreeNode temp = curr.left;
       curr.left = curr.right;
